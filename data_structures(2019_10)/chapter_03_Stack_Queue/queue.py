@@ -57,6 +57,7 @@ class LoopQueue:
     def __repr__(self):
         return self.__str__()
 
+
 if __name__ == '__main__':
     queue = LoopQueue()
     queue.enqueue(1)
