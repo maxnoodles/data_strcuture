@@ -45,6 +45,9 @@ class LinkedList:
             cur = cur.next
         return cur.value
 
+    def get_first(self):
+        return self.get(0)
+
     def set(self, index, value):
         if not 0 <= index < self._size:
             raise ValueError('Require 0 <= index < size')
