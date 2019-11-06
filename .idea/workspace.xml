@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="417e8531-2d7a-4c6d-ad8c-a878c251311d" name="Default" comment="Default">
-      <change afterPath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除链表重复元素.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/list_sum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_stack.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,6 +24,7 @@
     <SUITE FILE_PATH="coverage/data_structure$list_sum.coverage" NAME="list_sum Coverage Results" MODIFIED="1572774677006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList" />
     <SUITE FILE_PATH="coverage/data_structure$HuffmanTree.coverage" NAME="HuffmanTree Coverage Results" MODIFIED="1571140456840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/数据结构" />
     <SUITE FILE_PATH="coverage/data_structure$linked_list.coverage" NAME="linked_list Coverage Results" MODIFIED="1572452285750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList" />
+    <SUITE FILE_PATH="coverage/data_structure$binary_search_tree.coverage" NAME="binary_search_tree Coverage Results" MODIFIED="1573056196889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST" />
     <SUITE FILE_PATH="coverage/data_structure$linked_list_queue.coverage" NAME="linked_list_queue Coverage Results" MODIFIED="1572772957243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList" />
     <SUITE FILE_PATH="coverage/data_structure$linked_list_stack.coverage" NAME="linked_list_stack Coverage Results" MODIFIED="1572626308629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList" />
     <SUITE FILE_PATH="coverage/data_structure$leetcode_82_.coverage" NAME="leetcode-82-删除聊表重复元素 Coverage Results" MODIFIED="1572773997438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList" />
@@ -52,8 +48,8 @@
       <file leaf-file-name="linked_list_stack.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_stack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="100">
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -61,26 +57,17 @@
       <file leaf-file-name="linked_list.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="20">
               <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linked_list_queue.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py">
+      <file leaf-file-name="binary_search_tree.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST/binary_search_tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1079">
-              <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leetcode-82-删除链表重复元素.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除链表重复元素.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            <state relative-caret-position="122">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -89,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/list_sum.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -156,8 +143,9 @@
         <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py" />
         <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除聊表重复元素.py" />
         <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/list_sum.py" />
-        <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除链表重复元素.py" />
         <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py" />
+        <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除链表重复元素.py" />
+        <option value="$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST/binary_search_tree.py" />
       </list>
     </option>
   </component>
@@ -181,6 +169,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,11 +188,16 @@
               <item name="data_structures(2019_10)" type="462c0819:PsiDirectoryNode" />
               <item name="chapter_04_LinkedList" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="data_structure" type="b2602c69:ProjectViewProjectNode" />
+              <item name="data_structure" type="462c0819:PsiDirectoryNode" />
+              <item name="data_structures(2019_10)" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter_06_BST" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,26 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.list_sum">
-    <configuration name="图的邻接表" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="data_structure" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/图的邻接表.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.binary_search_tree">
     <configuration name="先序二叉树" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="data_structure" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -322,6 +297,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/栈.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="binary_search_tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="data_structure" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST/binary_search_tree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -426,13 +420,13 @@
       <item itemvalue="Python.linked_list" />
       <item itemvalue="Python.linked_list_stack" />
       <item itemvalue="Python.linked_list_queue" />
-      <item itemvalue="Python.leetcode-82-删除聊表重复元素" />
       <item itemvalue="Python.list_sum" />
+      <item itemvalue="Python.binary_search_tree" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.binary_search_tree" />
         <item itemvalue="Python.list_sum" />
-        <item itemvalue="Python.leetcode-82-删除聊表重复元素" />
         <item itemvalue="Python.linked_list_queue" />
         <item itemvalue="Python.linked_list_stack" />
         <item itemvalue="Python.linked_list" />
@@ -479,9 +473,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.5663717" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3618907" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32884902" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.264574" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3393124" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902153" weight="0.36514524" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902153" weight="0.3646409" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32918397" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -500,25 +494,25 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902153" visible="true" weight="0.18766756" />
       <window_info id="Structure" order="1" sideWeight="0.50097847" side_tool="true" weight="0.18498659" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32909605" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.26843658" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32909605" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32909605" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="调试" order="0" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997175" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32909605" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,13 +566,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/数据结构/队列queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/数据结构/算法测试.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -890,36 +877,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="100">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/list_sum.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/leetcode-82-删除链表重复元素.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        <state relative-caret-position="354">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list_queue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_04_LinkedList/linked_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_structures(2019_10)/chapter_06_BST/binary_search_tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
