@@ -21,7 +21,7 @@ class LinkedList:
     def is_empty(self):
         return self._size == 0
 
-    def add(self, index, value):
+    def add(self, index, value, i):
         if not 0 <= index <= self._size:
             raise ValueError('Add failed. Illegal index')
 
