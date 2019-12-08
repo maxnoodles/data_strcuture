@@ -22,6 +22,14 @@ class MyArray:
             raise ValueError('Require 0 <= index < array size')
         return self._data[index]
 
+    def __getitem__(self, item):
+        return self.get(item)
+
+    def swap(self, i, j):
+        if i < 0 or i >= self._size or j < 0 or j >= self._size:
+            raise ValueError("Index is illegal")
+        self._data[i], self._data[j] = self._data[j], self._data[i]
+
     def get_last(self):
         return self.get(self._size-1)
 
@@ -69,8 +77,8 @@ class MyArray:
             raise ValueError('remove failed. Require 0 < index < array size')
 
         ret = self._data[index]
-        for i in range(index, self._size):
-            self._data[i] = self._data[i + 1]
+        for i in range(index+1, self._size):
+            self._data[i-1] = self._data[i]
         self._size -= 1
 
         # 因为 // 是向下取整的，如果 size 为 1, 1 // 4 等于 0，不能将 capacity 缩融为 0，这样无法增长。
