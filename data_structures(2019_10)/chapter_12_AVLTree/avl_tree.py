@@ -18,6 +18,32 @@ class AVLTree:
     def is_empty(self):
         return self._size == 0
 
+    # 判断是否是二分搜索树
+    def is_bst(self):
+        values = []
+        self.in_order(self.root, values)
+        for i in range(1, len(values)):
+            if values[i-1] > values[i]:
+                return False
+        return True
+
+    def is_balance(self):
+        return self._is_balance(self.root)
+
+    def _is_balance(self, node):
+        if node is None:
+            return True
+        if abs(self.get_balance_factor(node)) > 1:
+            return False
+        return self._is_balance(node.left) and self._is_balance(node.right)
+
+    def in_order(self, node, values):
+        if node is None:
+            return
+        self.in_order(node.left, values)
+        values.append(node.v)
+        self.in_order(node.right, values)
+
     # 获取节点 node 的平衡因子
     def get_height(self, node: _Node):
         if node is None:
@@ -29,6 +55,48 @@ class AVLTree:
         if node is None:
             return 0
         return self.get_height(node.left) - self.get_height(node.right)
+
+    # 对节点 y 进行右旋转， 返回旋转后新的根节点x
+    #        y                                  x
+    #      /   \                              /    \
+    #     x    T4       向右旋转 (y)           z      y
+    #    /  \       - - - - - - - - - >     /  \   /  \
+    #   z   T3                             T1  T2  T3 T4
+    #  /  \
+    # T1  T2
+    def right_rotate(self, y: _Node):
+        x = y.left
+        T3 = x.right
+
+        x.right = y
+        y.left = T3
+
+        # 更新 height
+        y.height = max(self.get_height(y.left), self.get_height(y.right)) + 1
+        x.height = max(self.get_height(x.left), self.get_height(x.right)) + 1
+
+        return x
+
+    # 对节点 y 进行左旋转， 返回旋转后新的根节点x
+    #      y                                   x
+    #    /   \                               /    \
+    #   T1    x       向左旋转 (y)            y      z
+    #       /   \   - - - - - - - - - >    /  \   /  \
+    #      T2    z                        T1  T2 T3  T4
+    #           /  \
+    #          T3   T4
+    def left_rotate(self, y: _Node):
+        x = y.right
+        T2 = x.left
+
+        x.left = y
+        y.right = T2
+
+        # 更新 height
+        y.height = max(self.get_height(y.left), self.get_height(y.right)) + 1
+        x.height = max(self.get_height(x.left), self.get_height(x.right)) + 1
+
+        return x
 
     def add(self, v):
         self.root = self._add(self.root, v)
@@ -53,6 +121,24 @@ class AVLTree:
         if abs(balance_factor) > 1:
             print(f'unbalanced: {balance_factor}')
 
+        # LL
+        if balance_factor > 1 and self.get_balance_factor(node.left) >= 0:
+            return self.right_rotate(node)
+
+        # RR
+        if balance_factor < -1 and self.get_balance_factor(node.left) >= 0:
+            return self.left_rotate(node)
+
+        # LR
+        if balance_factor > 1 and self.get_balance_factor(node.left) < 0:
+            node.left = self.left_rotate(node.left)
+            return self.right_rotate(node)
+
+        if balance_factor < -1 and self.get_balance_factor(node.right) > 0:
+            node.right = self.right_rotate(node.right)
+            return self.left_rotate(node)
+
+
         return node
 
     def pre_order(self):
@@ -65,15 +151,15 @@ class AVLTree:
         self._pre_order(node.left)
         self._pre_order(node.right)
 
-    def in_order(self):
-        self._in_order(self.root)
-
-    def _in_order(self, node):
-        if node is None:
-            return
-        self._in_order(node.left)
-        print(node.v, end=' ')
-        self._in_order(node.right)
+    # def in_order(self):
+    #     self._in_order(self.root)
+    #
+    # def _in_order(self, node):
+    #     if node is None:
+    #         return
+    #     self._in_order(node.left)
+    #     print(node.v, end=' ')
+    #     self._in_order(node.right)
 
     def post_order(self):
         # 应用点：用于程序释放内存
@@ -197,15 +283,14 @@ class AVLTree:
 
 if __name__ == '__main__':
     bst = AVLTree()
-    num_str = '9534165874'
+    num_str = '123456789'
     for i in num_str:
         bst.add(int(i))
 
     print(bst)
     print('size:', bst.get_size())
-    print(bst.pre_order())
-    print(bst.in_order())
-    print(bst.post_order())
+    print('pre_order: ', bst.pre_order())
+    print('post_order: ', bst.post_order())
     print('min', bst.minimum())
     print('max', bst.maximum())
     print('remove min')
@@ -217,6 +302,8 @@ if __name__ == '__main__':
     bst.remove(3)
     print(bst.pre_order())
 
+    print('is_bst: {}'.format(bst.is_bst()))
+    print('is_balance: {}'.format(bst.is_balance()))
 
 
 
