@@ -63,6 +63,7 @@ class MaxHeap():
                 self._data.swap(j, i)
             i = j
 
+
 if __name__ == "__main__":
     n = 10000
     from time import time

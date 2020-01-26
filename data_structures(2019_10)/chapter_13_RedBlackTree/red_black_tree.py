@@ -1,11 +1,22 @@
+from enum import Enum
 
-class BST:
+
+class Color(Enum):
+    Red: bool = True
+    Black: bool = False
+
+
+class RBTree:
 
     class _Node:
-        def __init__(self, v):
+        RED = True
+        BALCK = False
+
+        def __init__(self, v: int):
             self.v = v
             self.left = None
             self.right = None
+            self.color = self.RED
 
     def __init__(self):
         self.root = None
@@ -17,13 +28,56 @@ class BST:
     def is_empty(self):
         return self._size == 0
 
-    def add(self, v):
-        self.root = self._add(self.root, v)
+    # 空节点为黑色
+    def is_red(self, node: _Node):
+        return node.color if node else self._Node.BALCK
 
-    def _add(self, node, v):
+    # 对节点 node 进行左旋转， 返回旋转后新的根节点x
+    #     node                                 x
+    #    /   \                               /    \
+    #   T1    x       向左旋转 (y)           node   T3
+    #       /   \   - - - - - - - - - >    /  \
+    #      T2    z                        T1  T2
+    def _left_rotate(self, node: _Node):
+        x = node.right
+        # 左旋转
+        node.right = x.left
+        x.left = node
+
+        x.color = node.color
+        node.color = self._Node.RED
+        return x
+
+    # 对节点 y 进行右旋转， 返回旋转后新的根节点x
+    #      node                                  x
+    #      /   \                              /   \
+    #     x    T2       向右旋转 (y)           y    node
+    #    /  \       - - - - - - - - - >            /  \
+    #   y   T1                                    T1  T2
+    def _right_rotate(self, node: _Node):
+        x = node.left
+        node.left = x.right
+        x.right = node
+
+        x.color = node.color
+        node.color = self._Node.RED
+        return x
+
+    def _flip_colors(self, node):
+        node.color = self._Node.RED
+        node.left.color = self._Node.BALCK
+        node.right.color = self._Node.BALCK
+
+    # 向红黑树添加元素
+    def add(self, v: int):
+        self.root = self._add(self.root, v)
+        # 根节点为黑色
+        self.root.color = self._Node.BALCK
+
+    def _add(self, node, v) -> _Node:
         if node is None:
             self._size += 1
-            node = self._Node(v)
+            node = self._Node(v)  # 默认插入红节点
             return node
         if v == node.v:
             return node
@@ -31,6 +85,19 @@ class BST:
             node.left = self._add(node.left, v)
         else:
             node.right = self._add(node.right, v)
+
+        # 左旋转 -> 右旋转 -> 颜色翻转
+        # 添加节点右边在叶子节点的右边
+        if self.is_red(node.right) and not self.is_red(node.left):
+            node = self._left_rotate(node)
+
+        # 添加节点右边在叶子节点的左边
+        if self.is_red(node.left) and self.is_red(node.left.left):
+            node = self._right_rotate(node)
+
+        if self.is_red(node.left) and self.is_red(node.right):
+            self._flip_colors(node)
+
         return node
 
     def pre_order(self):
@@ -174,7 +241,7 @@ class BST:
 
 
 if __name__ == '__main__':
-    bst = BST()
+    bst = RBTree()
     num_str = '9534165874'
     for i in num_str:
         bst.add(int(i))

@@ -138,7 +138,6 @@ class AVLTree:
             node.right = self.right_rotate(node.right)
             return self.left_rotate(node)
 
-
         return node
 
     def pre_order(self):
@@ -230,34 +229,67 @@ class AVLTree:
     def _remove(self, node, v):
         if node is None:
             return None
-
+    
+        ret_node = node
         if v < node.v:
             node.left = self._remove(node.left, v)
-            return node
+            ret_node = node
         elif v > node.v:
             node.right = self._remove(node.right, v)
-            return node
+            ret_node = node
         else:  # v == node.v
             if node.left is None:
                 right_node = node.right
                 node.right = None
                 self._size -= 1
-                return right_node
-            if node.right is None:
+                ret_node = right_node
+
+            elif node.right is None:
                 left_node = node.left
                 node.left = None
                 self._size -= 1
-                return left_node
-            # 如果左右子树均不为空
-            # 找到比待删除节点大的最小节点，即待删除节点右子树的最小节点
-            # 用这个节点顶替待删除节点的位置
-            successor = self._minimum(node.right)
-            successor.right = self._remove_min(node.right)
+                ret_node = left_node
 
-            successor.left = node.left
-            node.left = node.right = None
-            return successor
+            else:
+                # 如果左右子树均不为空
+                # 找到比待删除节点大的最小节点，即待删除节点右子树的最小节点
+                # 用这个节点顶替待删除节点的位置
+                successor = self._minimum(node.right)
+                successor.right = self._remove(node.right, successor.v)
+                successor.left = node.left
+                node.left = node.right = None
+                ret_node = successor
 
+            if ret_node is None:
+                return ret_node
+
+            ret_node.height = 1 + max(self.get_height(ret_node.left),
+                                  self.get_height(ret_node.right))
+
+            # 计算平衡因子
+            balance_factor = self.get_balance_factor(ret_node)
+            if abs(balance_factor) > 1:
+                print(f'unbalanced: {balance_factor}')
+
+            # LL
+            if balance_factor > 1 and self.get_balance_factor(ret_node.left) >= 0:
+                return self.right_rotate(ret_node)
+
+            # RR
+            if balance_factor < -1 and self.get_balance_factor(ret_node.left) >= 0:
+                return self.left_rotate(ret_node)
+
+            # LR
+            if balance_factor > 1 and self.get_balance_factor(ret_node.left) < 0:
+                ret_node.left = self.left_rotate(ret_node.left)
+                return self.right_rotate(ret_node)
+
+            if balance_factor < -1 and self.get_balance_factor(ret_node.right) > 0:
+                ret_node.right = self.right_rotate(ret_node.right)
+                return self.left_rotate(ret_node)
+            
+            return ret_node
+        
     def _generate_depth_string(self, depth):
         res = ''
         for i in range(depth):
@@ -275,36 +307,39 @@ class AVLTree:
     def __str__(self):
         res = []
         self._generate_bst_string(self.root, 0, res)
-        return '<chapter_06_BST.bst.BST>:\n' + ''.join(res)
+        return '<chapter_06_BST.avl.BST>:\n' + ''.join(res)
 
     def __repr__(self):
         return self.__str__()
 
 
 if __name__ == '__main__':
-    bst = AVLTree()
+    avl = AVLTree()
     num_str = '123456789'
     for i in num_str:
-        bst.add(int(i))
+        avl.add(int(i))
 
-    print(bst)
-    print('size:', bst.get_size())
-    print('pre_order: ', bst.pre_order())
-    print('post_order: ', bst.post_order())
-    print('min', bst.minimum())
-    print('max', bst.maximum())
+    print(avl)
+    print('size:', avl.get_size())
+    print('pre_order: ', avl.pre_order())
+    print('post_order: ', avl.post_order())
+    print('min', avl.minimum())
+    print('max', avl.maximum())
     print('remove min')
-    bst.remove_min()
-    print(bst.pre_order())
+    avl.remove_min()
+    print(avl.pre_order())
     print('remove max')
-    bst.remove_max()
-    print(bst.pre_order())
-    bst.remove(3)
-    print(bst.pre_order())
+    avl.remove_max()
+    print(avl.pre_order())
+    avl.remove(3)
+    print(avl.pre_order())
 
-    print('is_bst: {}'.format(bst.is_bst()))
-    print('is_balance: {}'.format(bst.is_balance()))
+    print('is_bst: {}'.format(avl.is_bst()))
+    print('is_balance: {}'.format(avl.is_balance()))
 
-
+    for i in num_str:
+        avl.remove(int(i))
+        if not avl.is_balance() or not avl.is_bst():
+            raise ValueError('error')
 
 
