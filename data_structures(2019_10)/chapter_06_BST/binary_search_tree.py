@@ -17,6 +17,19 @@ class BST:
     def is_empty(self):
         return self._size == 0
 
+    def __contains__(self, item):
+        return self._contains(self.root, item)
+
+    def _contains(self, node, e):
+        if not node:
+            return False
+        if node.e == e:
+            return True
+        elif node.e > e:
+            return self._contains(node.left, e)
+        else:
+            return self._contains(node.right, e)
+
     def add(self, v):
         self.root = self._add(self.root, v)
 
