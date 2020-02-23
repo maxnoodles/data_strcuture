@@ -184,6 +184,43 @@ def optimizer__partition(arr, l, r):
 
 
 @sort_time_count
+def quick_sort_3_ways(arr):
+    n = len(arr)
+    __quick_sort_3_ways(arr, 0, n-1)
+    return arr
+
+
+def __quick_sort_3_ways(arr, l, r):
+    if r - l <= 15:
+        merge_insert_sort(arr, l, r)
+        return
+
+    # partition
+    random_index = random.randint(l, r)
+    arr[l], arr[random_index] = arr[random_index], arr[l]
+    v = arr[l]
+
+    lt = l  # arr[l+1...lt] < v
+    gt = r + 1  # arr[gt...r] > v
+    i = l + 1  # arr[l+1...i) == v
+
+    # 当 i = gt 的时候终止条件，和 i) 想匹配
+    while i < gt:
+        if arr[i] < v:
+            arr[i], arr[lt+1] = arr[lt+1], arr[i]
+            lt += 1
+            i += 1
+        elif arr[i] > v:
+            arr[i], arr[gt-1] = arr[gt-1], arr[i]
+            gt -= 1
+        else:
+            i += 1
+    arr[l], arr[lt] = arr[lt], arr[l]
+    __quick_sort_3_ways(arr, l, lt-1)
+    __quick_sort_3_ways(arr, gt, r)
+
+
+@sort_time_count
 def python_sort(arr):
     return sorted(arr)
 
@@ -200,3 +237,4 @@ if __name__ == '__main__':
     # merge_sort_up(arr[:])
     # print(arr)
     quick_sort(arr[:])
+    quick_sort_3_ways(arr[:])
