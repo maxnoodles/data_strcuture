@@ -93,21 +93,22 @@ def __merge(arr, l, mid, r):
     aux = []
     i, j = l, mid+1
     for k in range(r-l+1):
-
-        if arr[i] <= arr[j]:
-            aux.append(arr[i])
-            i += 1
-        elif arr[i] > arr[j]:
-            aux.append(arr[j])
-            j += 1
+        # 要先检查索引是否越界
         # 当 i 超过 mid 的时候说明左边的都小于右边
-        elif i > mid:
+        if i > mid:
             aux.append(arr[j])
             j += 1
         # 当 j 超过 r 的时候说明左边的都大于右边
         elif j > r:
             aux.append(arr[i])
             i += 1
+        elif arr[i] <= arr[j]:
+            aux.append(arr[i])
+            i += 1
+        else:
+            aux.append(arr[j])
+            j += 1
+
     arr[l:r+1] = aux[:]
 
 
