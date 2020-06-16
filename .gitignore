@@ -3,3 +3,4 @@
 *.pyc
 .idea/
 *.iml
+!/algorithm(2020-01-24)/practice/767.重构字符串.py
